@@ -9,7 +9,7 @@
     <body>
         <div class="topbar">
             <div class="movies"><img src="pictures/Frame 3.png"><a>Movies</a></div>
-            <div class="searchbox"><img src="pictures/Icon.png"><input type="text" placeholder="Quick Search"></div>
+            <div class="searchbox"><img src="pictures/Icon.png"><input type="text" placeholder="Quick Search" onkeyup="moviesearch()" id="searchbar"></div>
         </div>
         <div class="content">
             <div class = "searchresults"> 
@@ -25,16 +25,31 @@
             </div>
             <div class = "div2">
                 <div class = "thumbnailsdiv">
-                    <div class="thumbnails"><div id="content1"></div></div>
-                    <div class="thumbnails"><div id="content2"></div></div>
-                    <div class="thumbnails"><div id="content3"></div></div>
+                    <div class="thumbnails" id= "content1">
+                        <div class = "things" > <p class="genre">1</p> <div class = "rating"><p>★★★★★</p></div> <p class="name">1</p> </div>
+                    </div>
+                    <div class="thumbnails" id= "content2">
+                        <div class = "things" > <p class="genre">2</p> <div class = "rating"><p>★★★★★</p></div> <p class="name">2</p> </div>
+                    </div>
+                    <div class="thumbnails" id= "content3">
+                        <div class = "things" > <p class="genre">3</p> <div class = "rating"><p>★★★★★</p></div> <p class="name">3</p> </div>
+                    </div>
                
-                    <div class="thumbnails"><div id="content4"></div></div>
-                    <div class="thumbnails"><div id="content5"></div></div>
-                    <div class="thumbnails"><div id="content6"></div></div>
+                    <div class="thumbnails" id= "content4">
+                        <div class = "things" > <p class="genre">4</p> <div class = "rating"><p>★★★★★</p></div> <p class="name">4</p> </div>
+                    </div>
+                    <div class="thumbnails" id= "content5">
+                        <div class = "things" > <p class="genre">5</p> <div class = "rating"><p>★★★★★</p></div> <p class="name">5</p> </div>
+                    </div>
+                    <div class="thumbnails" id= "content6">
+                        <div class = "things" > <p class="genre">6</p> <div class = "rating"><p>★★★★★</p></div> <p class="name">6</p> </div>
+                    </div>
                 </div>
 
             </div>
         </div>
+        <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+        <script src="home.js" ></script>
+        <script src="search.js"></script>
     </body>
 </html>
