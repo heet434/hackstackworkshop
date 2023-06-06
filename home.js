@@ -37,7 +37,7 @@ const getData1 = async () => {
 getData1()
     .then(data => {console.log('resolved:', data);
         console.log(data.results[0].title);
-        for(var i=1; i<=6; i++){
+        for(var i=1; i<=12; i++){
                 $('#content' + i + ' .name').text(data.results[i-1].title);
                 var allgenres = glist[data.results[i-1].genre_ids[0] ];
                 // for(var j=1; j<data.results[i-1].genre_ids.length; j++){
@@ -54,7 +54,7 @@ getData1()
                 $('#content' + i).css("background-image","url(" + IMG_URL + data.results[i-1].poster_path + "), linear-gradient(180deg, rgba(29, 29, 29, 0) 0%, rgba(29, 29, 29, 0.8) 80.79%)");
                 $('#content' + i).css("background-size", "cover");
                 $('#content' + i).css("background-blend-mode", "overlay");
-                var w = data.results[i-1].vote_average*$("#content" + i + " .rating ").width()/10;
+                var w = data.results[i-1].vote_average*$("#content" + i + " .rating").width()/10;
                 $('#content' + i + ' .rating').css("width", w);
     
                 }    

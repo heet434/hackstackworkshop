@@ -184,14 +184,20 @@ body{
                     }
                     .rating{
                         order: 1;
-                        height: calc(20vw*100/1185.16);
+                        /* height: calc(20vw*100/1185.16); */
+                        height: auto;
                         width: fit-content;
                         color: white;
                         overflow: hidden;
 
                     }
                         .rating p{
-                            width: inherit;
+                            /* width: inherit; */
+                            min-height: calc(12.67vw*100/1185.16);
+                            /* line-height: calc(12.67vw*100/1185.16);
+                            min-height: calc(12.67vw*100/1185.16);
+                            /* font-size: calc(20vw*100/1185.16); */
+
                         }
 
                     .genre{
@@ -213,4 +219,5 @@ body{
                         background: rgba(29, 29, 29, 0.5);
                         border-radius: 0px 8px;
                     }
+
                 
