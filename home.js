@@ -37,7 +37,7 @@ const getData1 = async () => {
 getData1()
     .then(data => {console.log('resolved:', data);
         console.log(data.results[0].title);
-        for(var i=1; i<=12; i++){
+        for(var i=1; i<=15; i++){
                 $('#content' + i + ' .name').text(data.results[i-1].title);
                 var allgenres = glist[data.results[i-1].genre_ids[0] ];
                 // for(var j=1; j<data.results[i-1].genre_ids.length; j++){
