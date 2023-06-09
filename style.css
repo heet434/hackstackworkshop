@@ -230,6 +230,7 @@ body{
     width: 100vw;
     opacity: 40%;
     background-color: #1F2A33;
+    /* border: #1F2A33 solid 2.5px; */
 }
 
     #clickdetailchild{
@@ -259,11 +260,12 @@ body{
         }
         #clickdetailchild .trailer{
             order:0;
-            height: calc(200vw*100/1185.16);
+            /* height: calc(200vw*100/1185.16); */
+            height: auto;
             width: 100%;
             background-color: #A7AEBA;
         }
-            #clickdetailchild .trailer video{
+            #clickdetailchild .trailer iframe{
                 width: 100%;
                 height: auto;
             }
