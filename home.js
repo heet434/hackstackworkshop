@@ -10,6 +10,9 @@ addtrailer = function(mov){
     var youtube; var p=0;
     $.getJSON(vid, function(trails){
         console.log(trails.results);
+        if(trails.results.length==0){
+            $('#clickdetailchild .trailer iframe').attr('src','https://www.youtube.com/embed/y-67bCRIrg4');
+        }
        for( x in trails.results ) { if(trails.results[p].type=='Trailer' && trails.results[p].official == true && trails.results[p].site == 'YouTube'){
             youtube = 'https://www.youtube.com/embed/' + trails.results[p].key;
             // console.log(youtube);
@@ -21,7 +24,8 @@ addtrailer = function(mov){
        };
        p=p+1;
        };
-    //    
+       
+    // //    
        
         // console.log(youtube);
     });
