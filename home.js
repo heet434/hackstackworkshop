@@ -5,7 +5,32 @@ const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 const genreURL = 'https://api.themoviedb.org/3/genre/movie/list?'+API_KEY;
 const searchURL = BASE_URL + '/search/movie?';
 const videoURL = 'https://api.themoviedb.org/3/movie/'
-
+addtrailer = function(mov){
+    var vid = videoURL + mov + "/videos?" + API_KEY;
+    var youtube; var p=0;
+    $.getJSON(vid, function(trails){
+        console.log(trails.results);
+        if(trails.results.length==0){
+            $('#clickdetailchild .trailer iframe').attr('src','https://www.youtube.com/embed/y-67bCRIrg4');
+        }
+       for( x in trails.results ) { if(trails.results[p].type=='Trailer' && trails.results[p].official == true && trails.results[p].site == 'YouTube'){
+            youtube = 'https://www.youtube.com/embed/' + trails.results[p].key;
+            // console.log(youtube);
+            $('#clickdetailchild .trailer iframe').attr('src',youtube);
+            break;
+       }
+       else{
+        $('#clickdetailchild .trailer iframe').attr('src','https://www.youtube.com/embed/y-67bCRIrg4');
+       };
+       p=p+1;
+       };
+       
+    // //    
+       
+        // console.log(youtube);
+    });
+    
+}
 
     // $(document).ready(
     //     function(){for(var i=1; i<=15; i++){
@@ -39,7 +64,7 @@ const videoURL = 'https://api.themoviedb.org/3/movie/'
         .catch(err => console.log('rejected', err.message));
 
 //genrelist fetched
-
+home = () => {
     const getData1 = async () => {
         const response = await fetch(API_URL);
         if( response.status !== 200){
@@ -82,17 +107,21 @@ const videoURL = 'https://api.themoviedb.org/3/movie/'
                         $('#clickdetailchild .name p').text(data.results[j-1].title);
                         $('#clickdetailchild .rating p').text("Rating: " + data.results[j-1].vote_average);
                         $('#clickdetailchild .overview p').text(data.results[j-1].overview);
-
+                        addtrailer(data.results[j-1].id);
                     }
             }
             }     
             )
         .catch(err => console.log('rejected:', err.message));
+        $('#searchbar').val('');
+};
+home();
 
 var myinput;
-moviesearch = () => {
+// moviesearch = () => {
     $(document).ready(function(){
         $('#searchbar').keyup(function(){
+            if($('#searchbar').val()==''){home();};
             myinput = $(this).val();
 
             const getData3 = async () => {
@@ -139,15 +168,14 @@ moviesearch = () => {
                                     $('#clickdetailchild .name p').text(data.results[j-1].title);
                                     $('#clickdetailchild .rating p').text("Rating: " + data.results[j-1].vote_average);
                                     $('#clickdetailchild .overview p').text(data.results[j-1].overview);
+                                    addtrailer(data.results[j-1].id);
                                 }
                         }
 
                     }
                     )
                     .catch(err => console.log('rejected', err.message));
-        });
+                    
+                });
     })
-}
-
-
-
+// }

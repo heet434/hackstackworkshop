@@ -8,8 +8,8 @@
     </head>
     <body>
         <div class="topbar">
-            <div class="movies"><img src="pictures/Frame 3.png"><a>Movies</a></div>
-            <div class="searchbox"><img src="pictures/Icon.png"><input type="text" placeholder="Quick Search" onkeyup="moviesearch()" id="searchbar"></div>
+            <div class="movies" onclick="home()"><img src="pictures/Frame 3.png"><a>Movies</a></div>
+            <div class="searchbox"><img src="pictures/Icon.png"><input type="text" placeholder="Quick Search" id="searchbar"></div>
         </div>
         <div class="content">
             <div class = "searchresults"> 
@@ -80,7 +80,7 @@
         </div>
         <div id="clickdetailchild">
             <div class="bg"></div>
-            <div class="trailer"><video controls></video></div>
+            <div class="trailer"><iframe allowfullscreen></iframe></div>
             <div class="name"><p></p></div>
             <div class="rating"><p></p></div>
             <div class="overview"><p></p></div>
